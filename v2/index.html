@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallo de Tierra Landscape</title>
+<meta name="description" content="Gallo de Tierra Landscape in Mesa, AZ: travertine, concrete, pavers and artificial turf across the Phoenix valley. Free estimates. Call or text (602) 717-7747.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Big+Shoulders+Display:wght@800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a landscape plan set. Sun-bleached sand ground with the truck's topo contour lines,
+   arched stucco-window hero, material rows instead of cards, a string-line process, and an estimate ticket. */
+:root{
+  --sand:#efe6d6;      /* page ground: decomposed granite */
+  --sand-2:#e4d6bf;
+  --paper:#fbf7ef;
+  --ink:#151714;
+  --muted:#5d584c;
+  --line:#d2c2a6;
+  --lime:#74b83a;      /* truck stripe, used as a fill */
+  --lime-ink:#3c7413;  /* lime dark enough for text on sand */
+  --copper:#b4552a;    /* LANDSCAPE lettering */
+  --coal:#121412;      /* tailgate black, same in both themes */
+  --cream:#f4f1e6;
+  --display:"Archivo", "Arial Black", system-ui, sans-serif;
+  --body:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --wordmark:"Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sand:#16130f;--sand-2:#201b14;--paper:#1c1812;--ink:#efe8da;--muted:#b2a891;--line:#3b3327;
+  --lime:#7cc142;--lime-ink:#9fd866;--copper:#e27c48;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sand:#16130f;--sand-2:#201b14;--paper:#1c1812;--ink:#efe8da;--muted:#b2a891;--line:#3b3327;
+  --lime:#7cc142;--lime-ink:#9fd866;--copper:#e27c48;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font:400 17px/1.6 var(--body)}
+img{display:block;max-width:100%;height:auto}
+[hidden]{display:none!important}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--sand)}
+
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:118%;font-weight:850;line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.1rem,5vw,3.6rem)}
+.tag{font:500 .78rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:.7rem;align-items:center;margin:0 0 1rem}
+.tag b{white-space:nowrap;font-weight:500;color:var(--ink);border:1px solid var(--ink);padding:.3rem .45rem;border-radius:2px}
+.lede{color:var(--muted);max-width:56ch;margin:1rem 0 0;font-size:1.05rem}
+section{padding-block:clamp(4rem,9vw,7rem)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font:800 1rem/1 var(--display);font-stretch:110%;letter-spacing:.01em;text-decoration:none;padding:1.05rem 1.4rem;border-radius:999px;border:2px solid var(--ink);cursor:pointer;transition:transform .15s ease,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-lime{background:var(--lime);color:#111;border-color:var(--lime)}
+.btn-ink{background:var(--ink);color:var(--sand)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn svg{width:18px;height:18px}
+
+/* truck wordmark, always on a black plate like the tailgate */
+.plate{display:inline-flex;background:var(--coal);padding:.55rem .75rem;border-radius:6px;text-decoration:none}
+.mark{--m:8px;display:inline-flex;flex-direction:column;font-size:var(--m);line-height:1;width:max-content;padding:.15em}
+.mark-rule{height:.24em;background:var(--cream);box-shadow:0 0 0 .12em #7cc142;margin:0 .15em .4em}
+.mark-name{font:800 3.1em/.8 var(--wordmark);text-transform:uppercase;color:var(--cream);-webkit-text-stroke:.05em #7cc142;paint-order:stroke fill;text-shadow:.03em .04em 0 #7cc142;white-space:nowrap}
+.mark-name small{font-size:.5em;vertical-align:.38em;margin:0 .1em}
+.mark-bar{height:.32em;background:var(--cream);box-shadow:0 0 0 .12em #7cc142;margin-top:.4em}
+.mark-tab{position:relative;z-index:1;margin:-.12em 15% 0 11%;background:var(--cream);color:#c8693a;font:700 1.15em/1 var(--display);font-stretch:70%;text-transform:uppercase;letter-spacing:.42em;text-align:center;padding:.3em 0 .26em .42em;box-shadow:0 0 0 .12em #7cc142;clip-path:inset(.12em -.3em -.3em -.3em)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--sand) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:1.6rem;padding-block:.7rem}
+.nav nav{display:flex;gap:1.5rem;margin-left:auto;font-weight:600;font-size:.95rem}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.nav .btn{padding:.75rem 1.1rem;font-size:.92rem}
+@media (max-width:900px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:420px){.nav .btn span{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(2.5rem,6vw,5rem) clamp(3rem,6vw,5rem)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background:
+   repeating-radial-gradient(ellipse 60% 45% at 88% 18%,transparent 0 26px,var(--line) 27px 28px),
+   repeating-radial-gradient(ellipse 40% 55% at 8% 96%,transparent 0 30px,var(--line) 31px 32px);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(90deg,#000 0,#000 100%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero .wrap > *{min-width:0}
+.hero h1{font-size:clamp(3rem,8.2vw,6.6rem);font-stretch:125%;line-height:.9}
+.hero h1 .hl{display:inline-block;background:var(--lime);color:#111;padding:0 .12em;transform:rotate(-1.5deg);border-radius:4px}
+.hero p.sub{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--muted);max-width:42ch;margin:1.5rem 0 2rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.facts{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.facts div{display:flex;flex-direction:column;gap:.15rem}
+.facts b{font:800 1.05rem/1.1 var(--display);font-stretch:112%}
+.facts span{font:500 .76rem/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.arch{position:relative;justify-self:end;width:100%;max-width:470px}
+.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:64% 60%;border-radius:999px 999px 10px 10px;border:6px solid var(--paper);box-shadow:0 24px 60px rgba(40,30,10,.22)}
+.stub{position:absolute;left:-28px;bottom:34px;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--lime);padding:.85rem 1rem;border-radius:6px;box-shadow:0 10px 30px rgba(40,30,10,.18);display:flex;flex-direction:column;gap:.2rem}
+.stub span{font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stub b{font:850 1.35rem/1 var(--display);font-stretch:112%;font-variant-numeric:tabular-nums}
+.sun{position:absolute;right:-10px;top:-10px;width:92px;height:92px;border-radius:50%;background:#e9a63a;display:grid;place-items:center;text-align:center;font:800 .74rem/1.05 var(--display);font-stretch:110%;color:#1a1408;transform:rotate(10deg);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.arch{justify-self:center;max-width:400px}.stub{left:8px}}
+
+/* ticker */
+.ticker{background:var(--coal);color:#7cc142;overflow:hidden;border-block:4px solid #7cc142}
+.ticker-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.ticker span{font:850 clamp(1.4rem,3vw,2.2rem)/1 var(--display);font-stretch:125%;text-transform:uppercase;padding:1rem 1.4rem;white-space:nowrap;display:flex;align-items:center;gap:2.8rem}
+.ticker span i{font-style:normal;color:var(--cream);font-size:.6em}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* materials */
+.mat-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2.5rem}
+.mat-head > *{min-width:0}
+@media (max-width:800px){.mat-head{grid-template-columns:1fr}}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.3fr) 260px;gap:clamp(1rem,3vw,2.5rem);align-items:center;padding-block:1.6rem;border-bottom:1px solid var(--line)}
+.row h3{font-size:clamp(2rem,4vw,3.1rem);font-stretch:125%;display:flex;align-items:center;gap:.9rem}
+.row p{margin:0 0 .8rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips span{font:500 .74rem/1 var(--mono);text-transform:uppercase;letter-spacing:.05em;padding:.42rem .55rem;border:1px solid var(--line);border-radius:999px;background:var(--paper)}
+.row img{width:260px;max-width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;transition:transform .3s}
+.row:hover img{transform:rotate(-2deg) scale(1.03)}
+.row .sw{flex:none;width:.42em;height:.42em;border-radius:3px;border:1px solid var(--line)}
+@media (max-width:820px){.row{grid-template-columns:1fr;gap:.8rem}.row img{width:100%;aspect-ratio:16/9}}
+
+/* before/after */
+.ba{background:var(--sand-2)}
+.ba .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:860px){.ba .wrap{grid-template-columns:1fr}}
+.jobs{display:grid;gap:.6rem;margin-top:2rem}
+.jobs button{all:unset;cursor:pointer;display:grid;grid-template-columns:56px 1fr;gap:.9rem;align-items:center;padding:.7rem;border-radius:8px;border:1px solid var(--line);background:var(--paper)}
+.jobs button img{width:56px;height:56px;border-radius:6px;object-fit:cover}
+.jobs button b{display:block;font:800 1.02rem/1.2 var(--display);font-stretch:110%}
+.jobs button small{color:var(--muted);font-size:.9rem}
+.jobs button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 5px 0 0 var(--lime)}
+.jobs button:focus-visible{outline:3px solid var(--copper);outline-offset:2px}
+.compare{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center;border-radius:12px;overflow:hidden;--pos:50%;box-shadow:0 20px 50px rgba(40,30,10,.25);touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.compare .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:var(--cream);pointer-events:none}
+.compare .knob{position:absolute;top:50%;left:var(--pos);width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--lime);border:3px solid var(--cream);display:grid;place-items:center;pointer-events:none;color:#111}
+.compare .knob svg{width:26px;height:26px}
+.compare .lbl{position:absolute;bottom:14px;font:500 .74rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:.45rem .6rem;border-radius:3px;pointer-events:none}
+.compare .lbl.b{left:14px;background:var(--coal);color:var(--cream)}
+.compare .lbl.a{right:14px;background:var(--lime);color:#111}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.compare:has(input:focus-visible){outline:3px solid var(--copper);outline-offset:4px}
+
+/* string line process */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:3.2rem}
+.steps::before{content:"";position:absolute;left:4%;right:4%;top:14px;border-top:2px dashed var(--copper)}
+.step{position:relative;min-width:0}
+.step::before{content:"";position:absolute;top:-3.2rem;left:0;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:30px solid var(--ink)}
+.step .no{font:500 .78rem/1 var(--mono);color:var(--copper);letter-spacing:.1em}
+.step h3{font-size:1.7rem;margin:.6rem 0 .6rem;font-stretch:112%}
+.step p{margin:0;color:var(--muted)}
+@media (max-width:780px){.steps{grid-template-columns:1fr;padding-top:0;padding-left:2.4rem;gap:2.2rem}.steps::before{left:10px;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed var(--copper)}.step::before{top:4px;left:-2.4rem;border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:22px solid var(--ink);border-right:0}}
+
+/* gallery */
+.gal{columns:4 230px;column-gap:12px;margin-top:2.5rem}
+.gal figure{break-inside:avoid;margin:0 0 12px;position:relative;border-radius:8px;overflow:hidden;background:var(--sand-2)}
+.gal img{width:100%;object-fit:cover}
+.gal .t img{aspect-ratio:3/4}.gal .s img{aspect-ratio:1/1}.gal .w img{aspect-ratio:4/3}
+.gal figcaption{position:absolute;left:8px;bottom:8px;font:500 .7rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:.4rem .5rem;border-radius:3px}
+
+/* area + faq */
+.area{border-top:1px solid var(--line)}
+.area .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.area .wrap > *{min-width:0}
+@media (max-width:820px){.area .wrap{grid-template-columns:1fr}}
+.cities{columns:2;column-gap:2rem;margin:1.6rem 0 0;padding:0;list-style:none;font:800 1.25rem/2 var(--display);font-stretch:112%}
+.cities li.home::after{content:"HQ";font:500 .65rem/1 var(--mono);background:var(--lime);color:#111;padding:.25rem .35rem;border-radius:2px;margin-left:.5rem;vertical-align:.25em}
+details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;font:800 1.15rem/1.3 var(--display);font-stretch:108%}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--copper)}
+details[open] summary::after{content:"−"}
+details p{margin:.6rem 0 0;color:var(--muted)}
+
+/* estimate ticket */
+.quote{background:var(--coal);color:var(--cream)}
+.quote .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.quote .wrap > *{min-width:0}
+@media (max-width:880px){.quote .wrap{grid-template-columns:1fr}}
+.quote .tag{color:#a7a99f}.quote .tag b{color:var(--cream);border-color:var(--cream)}
+.quote h2{color:var(--cream)}
+.quote .lede{color:#c4c2b6}
+.bigphone{display:block;margin:1.8rem 0 .3rem;font:850 clamp(2.3rem,5.4vw,3.6rem)/1 var(--display);font-stretch:118%;color:#7cc142;text-decoration:none;font-variant-numeric:tabular-nums}
+.qmeta{display:grid;gap:.4rem;margin-top:1.4rem;color:#c4c2b6;font-size:.98rem}
+.qmeta a{color:var(--cream)}
+.ticket{position:relative;background:#fbf7ef;color:#151714;border-radius:4px;padding:2.2rem clamp(1.1rem,3vw,2rem) 1.8rem;
+  -webkit-mask:radial-gradient(circle 8px at 50% 0,transparent 98%,#000) 0 0/22px 100% repeat-x;mask:radial-gradient(circle 8px at 50% 0,transparent 98%,#000) 0 0/22px 100% repeat-x;color-scheme:light}
+.ticket-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;border-bottom:2px solid #151714;padding-bottom:.8rem;margin-bottom:1.3rem}
+.ticket-head b{font:850 1.5rem/1 var(--display);font-stretch:118%}
+.ticket-head span{font:500 .74rem/1.4 var(--mono);color:#5d584c;text-transform:uppercase;letter-spacing:.06em;text-align:right}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.4rem}
+@media (max-width:520px){.tgrid{grid-template-columns:1fr}}
+.f{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.f.full{grid-column:1/-1}
+.f > label,.f > .lab{font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#5d584c}
+.f input,.f select,.f textarea{font:500 1.05rem/1.4 var(--body);color:#151714;background:transparent;border:0;border-bottom:1.5px solid #9d917c;padding:.45rem 0;border-radius:0;width:100%}
+.f textarea{min-height:84px;resize:vertical;background:repeating-linear-gradient(transparent 0 31px,#d8ccb6 31px 32px);line-height:32px;padding-top:0}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom-color:#151714;box-shadow:0 2px 0 #74b83a}
+.boxes{display:flex;flex-wrap:wrap;gap:.5rem .9rem;padding-top:.3rem}
+.boxes label{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;cursor:pointer}
+.boxes input{appearance:none;width:20px;height:20px;border:1.5px solid #151714;border-radius:2px;display:grid;place-items:center;margin:0;cursor:pointer;background:#fff}
+.boxes input:checked::after{content:"✓";font:800 15px/1 var(--body);color:#3c7413}
+.ticket .btn{margin-top:1.6rem;width:100%;background:#151714;color:#fbf7ef;border-color:#151714}
+.done{margin-top:1.2rem;border:1.5px dashed #3c7413;border-radius:4px;padding:1rem}
+.done p{margin:0 0 .6rem}
+.done pre{white-space:pre-wrap;word-break:break-word;font:500 .85rem/1.5 var(--mono);background:#efe6d6;padding:.8rem;border-radius:3px;margin:0 0 .8rem}
+.done .btn{margin:0;width:auto;padding:.7rem 1rem;font-size:.9rem;background:#74b83a;border-color:#74b83a;color:#111}
+
+footer{background:var(--coal);color:#a7a99f;border-top:1px solid #2a2d29;padding-block:2.6rem calc(2.6rem + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:1.2rem}
+footer a{text-decoration:none;color:var(--cream)}
+footer small{font:500 .74rem/1.5 var(--mono);letter-spacing:.04em}
+
+.callbar{display:none}
+@media (max-width:600px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--coal);padding:.6rem max(12px,env(safe-area-inset-right,0px)) calc(.6rem + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+  .callbar .btn{padding:.85rem .4rem;font-size:.95rem}
+  .callbar .btn-line{color:var(--cream);border-color:var(--cream)}
+  footer{padding-bottom:6.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <a class="plate" href="#top" aria-label="Gallo de Tierra Landscape home">
+    <span class="mark"><span class="mark-rule"></span><span class="mark-name">Gallo<small>de</small>Tierra</span><span class="mark-bar"></span><span class="mark-tab">Landscape</span></span>
+  </a>
+  <nav aria-label="Main"><a href="#materials">Services</a><a href="#results">Before &amp; After</a><a href="#work">Work</a><a href="#area">Service Area</a></nav>
+  <a class="btn btn-ink" href="tel:+16027177747"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg><span>(602) 717-7747</span></a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="tag"><b>Mesa, AZ</b> Hardscape &amp; turf · Phoenix valley</p>
+    <h1>Bare dirt to <span class="hl">backyard.</span></h1>
+    <p class="sub">Travertine, concrete, pavers and artificial turf, built by a crew that preps the ground right. Isaac comes out, measures, and gives you a straight price for free.</p>
+    <div class="ctas">
+      <a class="btn btn-lime" href="#quote">Get a free estimate</a>
+      <a class="btn btn-line" href="#results">See before &amp; afters</a>
+    </div>
+    <div class="facts">
+      <div><b>Free estimates</b><span>Measured on site</span></div>
+      <div><b>Owner on the job</b><span>Isaac Montero</span></div>
+      <div><b>Se habla español</b><span>Call or text</span></div>
+    </div>
+  </div>
+  <div class="arch">
+    <img src="img/truck.jpg" alt="Gallo de Tierra Landscape work truck at sunrise with palm trees and a lake behind it" width="1060" height="1050">
+    <div class="sun" aria-hidden="true">FREE<br>QUOTES<br>VALLEY-<br>WIDE</div>
+    <div class="stub"><span>Call or text</span><b>(602) 717-7747</b></div>
+  </div>
+</div></section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="tick">
+  <span>Travertine <i>◆</i> Concrete <i>◆</i> Pavers <i>◆</i> Turf <i>◆</i> Rock &amp; gravel <i>◆</i></span>
+</div></div>
+
+<section id="materials"><div class="wrap">
+  <div class="mat-head">
+    <div><p class="tag"><b>L-1</b> Materials</p><h2>Pick your ground.</h2></div>
+    <p class="lede">Four materials do most of the work in an Arizona yard. Here's where each one fits best. On the estimate we'll show you samples and talk through what makes sense for your space.</p>
+  </div>
+  <div class="rows">
+    <article class="row">
+      <h3><span class="sw" style="background:#e8dcc4"></span>Travertine</h3>
+      <div><p>Natural stone that stays cooler barefoot in July. The go-to around pools and on covered patios.</p><div class="chips"><span>Pool decks</span><span>Patios</span><span>Walkways</span><span>Stepping pads</span></div></div>
+      <img src="img/j029.jpg" alt="Travertine stepping pads set in turf beside a patio" loading="lazy" width="386" height="384">
+    </article>
+    <article class="row">
+      <h3><span class="sw" style="background:#b9b4aa"></span>Concrete</h3>
+      <div><p>Poured slabs and walks that take the heat, monsoon storms and the weight of a truck.</p><div class="chips"><span>Patio slabs</span><span>Driveways</span><span>Sidewalks</span><span>Pads</span></div></div>
+      <img src="img/j021.jpg" alt="Front yard with a curved concrete walkway beside new turf" loading="lazy" width="386" height="384">
+    </article>
+    <article class="row">
+      <h3><span class="sw" style="background:#8f8a84"></span>Pavers</h3>
+      <div><p>Interlocking pavers on a compacted base. They stay level, and a single paver can be lifted and fixed.</p><div class="chips"><span>Patios</span><span>Driveways</span><span>Fire pit areas</span><span>Borders</span></div></div>
+      <img src="img/j003.jpg" alt="Paver patio under a covered porch next to turf" loading="lazy" width="386" height="384">
+    </article>
+    <article class="row">
+      <h3><span class="sw" style="background:#5f9e33"></span>Turf</h3>
+      <div><p>Artificial grass that stays green all year with no mowing, no brown spots and a smaller water bill.</p><div class="chips"><span>Front lawns</span><span>Backyards</span><span>Pet areas</span><span>Side yards</span></div></div>
+      <img src="img/j024.jpg" alt="Curved artificial turf lawn edged with stone in a front yard" loading="lazy" width="386" height="384">
+    </article>
+  </div>
+</div></section>
+
+<section class="ba" id="results"><div class="wrap">
+  <div>
+    <p class="tag"><b>L-2</b> Before &amp; after</p>
+    <h2>Same yard. Different story.</h2>
+    <p class="lede">Drag the green handle across the photo. Pick another job below to compare it.</p>
+    <div class="jobs" role="group" aria-label="Choose a job to compare">
+      <button type="button" aria-pressed="true" data-b="img/j001.jpg" data-a="img/j003.jpg" data-t="Covered-patio backyard"><img src="img/j003.jpg" alt=""><span><b>Covered-patio backyard</b><small>Dirt to paver patio and turf</small></span></button>
+      <button type="button" aria-pressed="false" data-b="img/j032.jpg" data-a="img/j033.jpg" data-t="Side yard, fence to fence"><img src="img/j033.jpg" alt=""><span><b>Side yard, fence to fence</b><small>Weeds to turf with a gravel border</small></span></button>
+      <button type="button" aria-pressed="false" data-b="img/j023top.jpg" data-a="img/j022.jpg" data-t="Front yard lawn"><img src="img/j022.jpg" alt=""><span><b>Front yard lawn</b><small>Dead grass to green turf</small></span></button>
+    </div>
+  </div>
+  <div class="compare" id="compare">
+    <img class="after" id="ba-a" src="img/j003.jpg" alt="After: finished yard">
+    <img class="before" id="ba-b" src="img/j001.jpg" alt="Before: the yard at the start of the job">
+    <span class="lbl b">Before</span><span class="lbl a">After</span>
+    <span class="bar"></span>
+    <span class="knob" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span>
+    <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Slide to compare before and after: Covered-patio backyard">
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <p class="tag"><b>L-3</b> How it works</p>
+  <h2>Staked, built, walked.</h2>
+  <div class="steps">
+    <div class="step"><span class="no">STEP 01</span><h3>Call, text or DM</h3><p>Tell us what you want and send a couple of photos of the space if you have them.</p></div>
+    <div class="step"><span class="no">STEP 02</span><h3>Free estimate</h3><p>Isaac measures on site, walks you through materials, and gives you a written price.</p></div>
+    <div class="step"><span class="no">STEP 03</span><h3>We build it</h3><p>Grading, base, install and clean-up. Then we walk the finished yard with you.</p></div>
+  </div>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+  <p class="tag"><b>L-4</b> Recent work</p>
+  <h2>Yards around the valley.</h2>
+  <div class="gal">
+    <figure class="t"><img src="img/j020.jpg" alt="Turf lawn with brick edging" loading="lazy"><figcaption>Turf + brick edge</figcaption></figure>
+    <figure class="s"><img src="img/j026.jpg" alt="Travertine entry walkway" loading="lazy"><figcaption>Travertine entry</figcaption></figure>
+    <figure class="w"><img src="img/j030.jpg" alt="Travertine and turf grid along a porch" loading="lazy"><figcaption>Stone &amp; turf grid</figcaption></figure>
+    <figure class="t"><img src="img/j036.jpg" alt="Gravel path beside a strip of turf" loading="lazy"><figcaption>Gravel path</figcaption></figure>
+    <figure class="s"><img src="img/j004.jpg" alt="Paver walkway beside a turf lawn" loading="lazy"><figcaption>Paver walk</figcaption></figure>
+    <figure class="w"><img src="img/j031.jpg" alt="Curved lawn with a paver border" loading="lazy"><figcaption>Curved border</figcaption></figure>
+    <figure class="t"><img src="img/j009.jpg" alt="Long turf runner in a backyard" loading="lazy"><figcaption>Turf runner</figcaption></figure>
+    <figure class="s"><img src="img/j038.jpg" alt="Paver pad framed in turf" loading="lazy"><figcaption>Paver pad</figcaption></figure>
+    <figure class="w"><img src="img/j028.jpg" alt="Backyard turf lawn beside a house" loading="lazy"><figcaption>Backyard lawn</figcaption></figure>
+    <figure class="t"><img src="img/j034.jpg" alt="Gravel side yard along a wood fence" loading="lazy"><figcaption>Rock side yard</figcaption></figure>
+    <figure class="s"><img src="img/j041.jpg" alt="Turf with stepping pads by a pool" loading="lazy"><figcaption>Stepping pads</figcaption></figure>
+    <figure class="w"><img src="img/ig-desert.jpg" alt="Desert landscaping at a community entrance" loading="lazy"><figcaption>Desert landscaping</figcaption></figure>
+  </div>
+  <p style="margin-top:1.6rem;color:var(--muted)">More jobs on Instagram: <a href="https://www.instagram.com/gallo_de_tierralandscape/" target="_blank" rel="noopener" style="color:var(--lime-ink);font-weight:700">@gallo_de_tierralandscape</a></p>
+</div></section>
+
+<section class="area" id="area"><div class="wrap">
+  <div>
+    <p class="tag"><b>L-5</b> Service area</p>
+    <h2>Based in Mesa. Working the whole valley.</h2>
+    <ul class="cities">
+      <li class="home">Mesa</li><li>Gilbert</li><li>Chandler</li><li>Queen Creek</li><li>Tempe</li><li>Scottsdale</li><li>Phoenix</li><li>Glendale</li><li>Peoria</li><li>Goodyear</li>
+    </ul>
+    <p class="lede">Don't see your city? Call anyway. If it's in the valley, we'll probably come out.</p>
+  </div>
+  <div>
+    <p class="tag"><b>FAQ</b> Common questions</p>
+    <details open><summary>Is the estimate really free?</summary><p>Yes. We come out, measure, and give you a price. There's no charge and no pressure.</p></details>
+    <details><summary>Travertine or pavers?</summary><p>Travertine stays cooler underfoot and looks natural, so it's great by a pool. Pavers come in more colors and shapes and work well for driveways. We'll bring both up at the estimate.</p></details>
+    <details><summary>How long does a job take?</summary><p>Most patios, walkways and turf installs take a few days. Full backyard redos take longer. Your quote includes a timeline.</p></details>
+    <details><summary>Do you tear out the old stuff?</summary><p>Yes. Removing old grass, rock or concrete, hauling it off and grading can all be part of the quote.</p></details>
+  </div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+  <div>
+    <p class="tag"><b>L-6</b> Free estimate</p>
+    <h2>Let's look at your yard.</h2>
+    <p class="lede">The fastest way to get on the schedule is a call or text. Or fill out the ticket and send it over.</p>
+    <a class="bigphone" href="tel:+16027177747">(602) 717-7747</a>
+    <div class="qmeta">
+      <span>Isaac Montero, owner</span>
+      <span>Gallo De Tierra Landscape LLC · Mesa, AZ 85204</span>
+      <span>Instagram: <a href="https://www.instagram.com/gallo_de_tierralandscape/" target="_blank" rel="noopener">@gallo_de_tierralandscape</a></span>
+    </div>
+  </div>
+  <form class="ticket" id="ticket" novalidate>
+    <div class="ticket-head"><b>Estimate request</b><span>Gallo de Tierra Landscape<br><span id="t-date"></span></span></div>
+    <div class="tgrid">
+      <div class="f"><label for="t-name">Name</label><input id="t-name" name="name" autocomplete="name" required></div>
+      <div class="f"><label for="t-phone">Phone</label><input id="t-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="f full"><label for="t-city">City / cross streets</label><input id="t-city" name="city" placeholder="Mesa, Power &amp; Baseline"></div>
+      <div class="f full"><span class="lab" id="t-work">Work needed</span>
+        <div class="boxes" role="group" aria-labelledby="t-work">
+          <label><input type="checkbox" id="t-1" name="svc" value="Travertine">Travertine</label>
+          <label><input type="checkbox" id="t-2" name="svc" value="Concrete">Concrete</label>
+          <label><input type="checkbox" id="t-3" name="svc" value="Pavers">Pavers</label>
+          <label><input type="checkbox" id="t-4" name="svc" value="Turf">Turf</label>
+          <label><input type="checkbox" id="t-5" name="svc" value="Rock / gravel">Rock / gravel</label>
+        </div>
+      </div>
+      <div class="f full"><label for="t-area">Where</label>
+        <select id="t-area" name="area"><option>Backyard</option><option>Front yard</option><option>Front and backyard</option><option>Side yard</option><option>Driveway</option><option>Pool deck</option></select>
+      </div>
+      <div class="f full"><label for="t-notes">Notes</label><textarea id="t-notes" name="notes" placeholder="Size, what's there now, what you'd like"></textarea></div>
+    </div>
+    <button class="btn" type="submit">Fill out my ticket</button>
+    <div class="done" id="t-done" hidden aria-live="polite">
+      <p><b>Your ticket is ready.</b> Text it to (602) 717-7747 and Isaac will get back to you:</p>
+      <pre id="t-text"></pre>
+      <button type="button" class="btn" id="t-copy">Copy message</button>
+    </div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <a class="plate" href="#top" aria-label="Back to top" style="padding:0"><span class="mark" style="--m:7px"><span class="mark-rule"></span><span class="mark-name">Gallo<small>de</small>Tierra</span><span class="mark-bar"></span><span class="mark-tab">Landscape</span></span></a>
+  <nav aria-label="Footer"><a href="#materials">Services</a><a href="#results">Before &amp; After</a><a href="#work">Work</a><a href="#quote">Free Estimate</a><a href="https://www.instagram.com/gallo_de_tierralandscape/" target="_blank" rel="noopener">Instagram</a></nav>
+  <small>(602) 717-7747 · Travertine · Concrete · Pavers · Turf<br>© 2026 Gallo De Tierra Landscape LLC · Mesa, AZ</small>
+</div></footer>
+
+<div class="callbar"><a class="btn btn-line" href="tel:+16027177747">Call now</a><a class="btn btn-lime" href="#quote">Free estimate</a></div>
+
+<script>
+(function(){
+  // ticker loop
+  var t=document.getElementById('tick');
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){for(var i=0;i<3;i++)t.appendChild(t.firstElementChild.cloneNode(true))}
+  // before/after
+  var c=document.getElementById('compare'),r=document.getElementById('ba-range'),a=document.getElementById('ba-a'),b=document.getElementById('ba-b');
+  function upd(){c.style.setProperty('--pos',r.value+'%')}
+  r.addEventListener('input',upd);upd();
+  var jobs=document.querySelectorAll('.jobs button');
+  jobs.forEach(function(j){j.addEventListener('click',function(){
+    jobs.forEach(function(x){x.setAttribute('aria-pressed',x===j)});
+    a.src=j.dataset.a;b.src=j.dataset.b;r.value=50;upd();
+    r.setAttribute('aria-label','Slide to compare before and after: '+j.dataset.t);
+  })});
+  // ticket
+  var f=document.getElementById('ticket'),out=document.getElementById('t-text'),done=document.getElementById('t-done');
+  document.getElementById('t-date').textContent=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.name.value.trim()){f.name.focus();return}
+    if(!f.phone.value.trim()){f.phone.focus();return}
+    var s=[].map.call(f.querySelectorAll('input[name=svc]:checked'),function(i){return i.value}).join(', ')||'Not sure yet';
+    out.textContent="Hi Isaac, I'd like a free estimate.\nName: "+f.name.value.trim()+"\nPhone: "+f.phone.value.trim()+(f.city.value.trim()?"\nLocation: "+f.city.value.trim():"")+"\nWhere: "+f.area.value+"\nWork: "+s+(f.notes.value.trim()?"\nNotes: "+f.notes.value.trim():"");
+    done.hidden=false;done.scrollIntoView({block:'nearest',behavior:'smooth'});
+  });
+  document.getElementById('t-copy').addEventListener('click',function(){
+    var btn=this;
+    navigator.clipboard.writeText(out.textContent).then(function(){btn.textContent='Copied'},function(){var rg=document.createRange();rg.selectNodeContents(out);var s=getSelection();s.removeAllRanges();s.addRange(rg);btn.textContent='Selected, tap Copy'});
+  });
+})();
+</script>
+</body>
+</html>
